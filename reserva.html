@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva tu llamada — Vozist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black:#060608;
+            --blue-light:#4d8dff;
+            --blue-glow:rgba(77,141,255,.45);
+            --purple:#2f1454;
+            --text-dim:rgba(255,255,255,.5);
+            --text-dim2:rgba(255,255,255,.32);
+        }
+        *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+        body { background:var(--black); color:#fff; font-family:'DM Sans',sans-serif; overflow-x:hidden; min-height:100vh; }
+
+        body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(rgba(255,255,255,.014) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.014) 1px,transparent 1px); background-size:56px 56px; pointer-events:none; z-index:0; }
+
+        .g { background:linear-gradient(120deg,var(--blue-light) 0%,var(--blue-light) 55%,var(--purple) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; text-shadow:0 0 26px var(--blue-glow); }
+
+        nav { position:relative; z-index:10; padding:1.4rem 2rem; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,.06); }
+        .logo { display:flex; align-items:center; gap:.7rem; text-decoration:none; color:#fff; }
+        .logo img { width:36px; height:36px; border-radius:10px; object-fit:cover; }
+        .logo span { font-family:'Montserrat',sans-serif; font-weight:800; font-size:1rem; letter-spacing:-.02em; }
+        .back { color:var(--text-dim); text-decoration:none; font-size:.85rem; font-weight:500; transition:color .2s; }
+        .back:hover { color:#fff; }
+
+        main { position:relative; z-index:5; max-width:760px; margin:0 auto; padding:3.5rem 1.5rem 4rem; text-align:center; }
+        .sec-label { font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.2em; color:var(--blue-light); margin-bottom:.8rem; }
+        h1 { font-family:'Montserrat',sans-serif; font-weight:800; font-size:clamp(1.9rem,4.5vw,2.8rem); letter-spacing:-.03em; line-height:1.1; margin-bottom:1rem; }
+        .sub { font-size:.95rem; color:var(--text-dim); font-weight:300; line-height:1.7; max-width:460px; margin:0 auto 2.5rem; }
+
+        .cal-box { background:rgba(255,255,255,.025); border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:.5rem; overflow:hidden; }
+        .calendly-inline-widget { min-width:280px; height:700px; }
+
+        @media(max-width:640px) {
+            .calendly-inline-widget { height:800px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo">
+        <img src="/vozist_logo.jpeg" alt="Vozist">
+        <span>Vozist</span>
+    </a>
+    <a href="index.html" class="back">← Volver</a>
+</nav>
+
+<main>
+    <p class="sec-label">Reserva tu llamada</p>
+    <h1>Elige el horario<br>que mejor te <span class="g">venga</span></h1>
+    <p class="sub">30 minutos, sin compromiso. Hablamos de tu negocio y te decimos exactamente qué se puede automatizar.</p>
+
+    <div class="cal-box">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/xavi-vozist/30min?background_color=060608&text_color=ffffff&primary_color=4d8dff"></div>
+    </div>
+</main>
+
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+</body>
+</html>
